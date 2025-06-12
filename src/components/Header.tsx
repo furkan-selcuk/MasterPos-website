@@ -1,33 +1,37 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
+import { toggleMode } from '@/store/slices/themeSlice';
 
 export default function Header() {
-    const [isOn, setIsOn] = useState(true);
+    const [isOn, setIsOn] = useState<boolean>(true);
+    const dispatch = useDispatch();
+    const mode = useSelector((state: RootState) => state.theme.mode);
+
     return (
-        <div className="flex items-center justify-between w-full h-full flex-row  max-[800px]:flex-row-reverse max-[800px]:items-center max-[800px]:justify-center max-[550px]:justify-between ">
+        <div className="dark:bg-black bg-white flex items-center justify-between w-full h-full flex-row  max-[800px]:flex-row-reverse max-[800px]:items-center max-[800px]:justify-center max-[550px]:justify-between ">
             <header className="flex   w-full h-full flex-col justify-center max-[800px]:hidden">
-                <p className="text-2xl font-bold text-[#202020]"> Products</p>
+                <p className="text-2xl font-bold text-[#202020] dark:text-white"> Products</p>
                 <p className=" text-base text-[#8F8F8F]"> Manage your products</p>
             </header>
             <div className="flex items-center  gap-[20px] w-full h-full flex-row  ">
                 <button className="max-[800px]:hidden">
                 <span className="material-symbols-outlined text-[#878787]">
-                    Sunny
+                    {mode === 'light' ? 'Sunny' : 'bedtime'}
                 </span>
                 </button>
 
                 <button 
                     className={`max-[800px]:hidden relative w-[58px] h-[30px] focus:outline-none transition-colors duration-300 pl-2 pr-10 ${isOn ? "bg-[#e3e3e3]" : "bg-[#f3f3f3]"} rounded-full`}
                     aria-label="switch"
-                    onClick={() => setIsOn(!isOn)}
+                    onClick={() => {
+                        setIsOn(!isOn);
+                        dispatch(toggleMode());
+                    }}
                 >
                     <span
                         className={`absolute top-1/2 -translate-y-1/2 left-0 w-[30px] h-[30px] rounded-full border-4 border-white transition-all duration-300 ${isOn ? "bg-[#4F56D3] translate-x-0" : "bg-gray-300 translate-x-[28px]"}`}
                     />
-                </button>
-                <button className="max-[800px]:hidden">
-                <span className="material-symbols-outlined text-[#878787] max-[800px]:hidden">
-                    bedtime
-                </span>
                 </button>
                 <button className="max-[800px]:hidden">
                 <span className="material-symbols-outlined text-[#878787] max-[800px]:hidden">
@@ -52,7 +56,7 @@ export default function Header() {
                 <div className="flex items-center gap-2 max-[800px]:ml-auto max-[550px]:hidden">
                     <div className="h-[57px] w-[57px] bg-[#C4C4C4] rounded-full flex-shrink-0"></div>
                     <div className="flex flex-col justify-center ml-2">
-                        <p className="text-base font-bold text-[#202020]">Patricia Peter</p>
+                        <p className="text-base font-bold text-[#202020] dark:text-white">Patricia Peter</p>
                         <p className="text-sm text-[#8F8F8F]">Super Admin</p>
                     </div>
                 </div>

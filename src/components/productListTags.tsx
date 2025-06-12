@@ -1,6 +1,17 @@
-export default function ProductListTags({ product }) {
+// Product tipini tanımla
+interface Product {
+    id: string;
+    name: string;
+    imageUrl?: string;
+    category?: string;
+    productCode?: string;
+    price?: number;
+    status?: boolean;
+}
+
+export default function ProductListTags({ product }: { product: Product }) {
     return (
-        <div className="flex items-center py-4 border-b border-gray-200 text-black text-sm select-none justify-between">
+        <div className="flex items-center py-4 border-b border-gray-200 text-black text-sm select-none justify-between dark:text-white">
             
             <div className=" flex justify-center">
                 <input type="checkbox" className="w-4 h-4" />

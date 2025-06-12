@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
 
-export default function SidebarButton({ icon, text, count }) {
+interface SidebarButtonProps {
+    icon: string;
+    text: string;
+    count?: number | string;
+}
+
+export default function SidebarButton({ icon, text, count }: SidebarButtonProps) {
     return (
         <div>
-            <button className="flex items-center gap-2 h-[50px] relative w-full max-[800px]:justify-center cursor-pointer">
+            <button className="flex items-center gap-2 h-[50px] relative w-full max-[800px]:justify-center cursor-pointer ">
                 <span className="material-symbols-outlined text-[#878787] w-[25px] h-[25px]">{icon}</span>
                 <span className="text-[#878787] text-base font-medium max-[800px]:hidden">{text}</span>
                 {count !== undefined && (

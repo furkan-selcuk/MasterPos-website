@@ -1,24 +1,27 @@
+'use client';
 import ProductListTags from "./productListTags";
-import { useProduct } from "@/context/ProductContext";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 import { useState } from "react";
+import { Product } from '@/store/slices/productSlice';
 
 export default function ProductList() {
-    const { products } = useProduct();
-    const [searchTerm, setSearchTerm] = useState("");
+    const products = useSelector((state: RootState) => state.product.products);
+    const [searchTerm, setSearchTerm] = useState<string>("");
 
-    const filteredProducts = products.filter(product => 
+    const filteredProducts = products.filter((product: Product) => 
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
         <div>
-            <header className="flex  justify-between flex-row max-[550px]:flex-col max-[550px]:">
+            <header className="flex  justify-between flex-row max-[550px]:flex-col  dark:bg-black dark:text-white">
                 <h1 className="text-xl font-bold">All Products</h1>
                 <div className="flex items-center gap-2">
                     <input 
                         type="text" 
                         placeholder="Search" 
-                        className="border border-gray-300 rounded-md px-4 py-2 max-[800px]:hidden" 
+                        className="border border-gray-300 rounded-md px-4 py-2 max-[800px]:hidden dark:text-black " 
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
