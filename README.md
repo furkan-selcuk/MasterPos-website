@@ -7,7 +7,7 @@
 - **React**(Bileşen tabanlı arayüz geliştirme)
 - **Tailwind CSS** (Utility-first CSS framework)
 - **Redux Toolkit** (Global state yönetimi)
-- **JavaScript** & TypeScript (ES6+)
+- **TypeScript** & JavaScript
 - **Node.js** (Çalışma ortamı)
 - **npm veya yarn** (Paket yönetimi)
 
