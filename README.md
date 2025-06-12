@@ -33,7 +33,7 @@ yarn dev
 # Geliştirme Sürecine Dair Kısa Notlar
 
 - Proje, Next.js'in app router yapısı ile oluşturulmuştur.
-- Tasarımda tamamen **Tailwind CSS** kullanılmıştır.
+- Tasarımda tamamen **Tailwind CSS** kullanılmıştır ve **karanlık mod (dark mode)** desteği mevcuttur.
 - Global state yönetimi için **Redux Toolkit** tercih edilmiştir.
 - Responsive **(mobil uyumlu)** tasarıma dikkat edilmiştir.
 - Kod okunabilirliği ve bileşenlerin tekrar kullanılabilirliği ön planda tutulmuştur. 
