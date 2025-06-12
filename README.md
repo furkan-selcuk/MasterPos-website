@@ -1,14 +1,15 @@
 ![Adsız tasarım (69)](https://github.com/user-attachments/assets/7136dcdc-3456-406e-af93-2d64c928ed04)
+![Adsız tasarım (71)](https://github.com/user-attachments/assets/c296e864-1ec9-483a-8dd5-3f8ab2c5cf53)
 
 # Kullandığım Teknolojiler
 
-- Next.js (React tabanlı framework)
-- React (Bileşen tabanlı arayüz geliştirme)
-- Tailwind CSS (Utility-first CSS framework)
-- Context API (Global state yönetimi)
-- JavaScript (ES6+)
-- Node.js (Çalışma ortamı)
-- npm veya yarn (Paket yönetimi)
+- **Next.js** (React tabanlı framework)
+- **React**(Bileşen tabanlı arayüz geliştirme)
+- **Tailwind CSS** (Utility-first CSS framework)
+- **Redux Toolkit** (Global state yönetimi)
+- **JavaScript** & TypeScript (ES6+)
+- **Node.js** (Çalışma ortamı)
+- **npm veya yarn** (Paket yönetimi)
 
 # Projeyi Nasıl Çalıştırabilirsiniz?
 
@@ -31,8 +32,8 @@ yarn dev
 
 # Geliştirme Sürecine Dair Kısa Notlar
 
-- Proje, Next.js’in app router yapısı ile oluşturulmuştur.
-- Tasarımda tamamen Tailwind CSS kullanılmıştır.
-- Global state yönetimi için Context API tercih edilmiştir.
-- Responsive (mobil uyumlu) tasarıma dikkat edilmiştir.
-- Kod okunabilirliği ve bileşenlerin tekrar kullanılabilirliği ön planda tutulmuştur.
+- Proje, Next.js'in app router yapısı ile oluşturulmuştur.
+- Tasarımda tamamen **Tailwind CSS** kullanılmıştır.
+- Global state yönetimi için **Redux Toolkit** tercih edilmiştir.
+- Responsive **(mobil uyumlu)** tasarıma dikkat edilmiştir.
+- Kod okunabilirliği ve bileşenlerin tekrar kullanılabilirliği ön planda tutulmuştur. 
